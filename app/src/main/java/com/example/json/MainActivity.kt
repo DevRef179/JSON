@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
@@ -21,6 +22,15 @@ class MainActivity : AppCompatActivity() {
         val usersList: ArrayList<UserModelClass> = ArrayList()
 
         try {
+
+            // Neu mit GSon
+
+            val jsonString = getJSONFromAssets()!!
+            val users = Gson().fromJson(jsonString, Users::class.java)
+
+                //Gson().fromJson(jsonString, Users::class.java)
+
+            /*
             // As we have JSON object, so we are getting the object
             //Here we are calling a Method which is returning the JSON object
             val obj = JSONObject(getJSONFromAssets()!!)
@@ -53,17 +63,18 @@ class MainActivity : AppCompatActivity() {
                 // add the details in the list
                 usersList.add(userDetails)
             }
+                        */
+
+            // Set the LayoutManager that this RecyclerView will use.
+            rvUsersList.layoutManager = LinearLayoutManager(this)
+            // Adapter class is initialized and list is passed in the param.
+            val itemAdapter = UserAdapter(this, users.users)
+            // adapter instance is set to the recyclerview to inflate the items.
+            rvUsersList.adapter = itemAdapter
         } catch (e: JSONException) {
             //exception
             e.printStackTrace()
         }
-
-        // Set the LayoutManager that this RecyclerView will use.
-        rvUsersList.layoutManager = LinearLayoutManager(this)
-        // Adapter class is initialized and list is passed in the param.
-        val itemAdapter = UserAdapter(this, usersList)
-        // adapter instance is set to the recyclerview to inflate the items.
-        rvUsersList.adapter = itemAdapter
 
     }
 

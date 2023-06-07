@@ -3,14 +3,14 @@
   "users": [
     {
       "id": 1,
-      "name": "Denis Panjuta",
+      "name": "Denis Johnson",
       "email": "denis@gmail.com",
       "gender": "Male",
       "weight": 75.5,
       "height": 182,
       "phone": {
-        "mobile": "0000000000",
-        "office": "00000000"
+        "mobile": "1235156215",
+        "office": "123355145551"
       }
     },
     {
@@ -21,8 +21,8 @@
       "weight": 77.0,
       "height": 183,
       "phone": {
-        "mobile": "0000000000",
-        "office": "00000000"
+        "mobile": "1566516556",
+        "office": "55959512212"
       }
     },
     {
@@ -33,8 +33,8 @@
       "weight": 68.7,
       "height": 175,
       "phone": {
-        "mobile": "0000000000",
-        "office": "00000000"
+        "mobile": "0174756118",
+        "office": "123556616"
       }
     },
     {
@@ -46,7 +46,7 @@
       "height": 174,
       "phone": {
         "mobile": "0000000000",
-        "office": "00000000"
+        "office": "12356654565"
       }
     }
   ]

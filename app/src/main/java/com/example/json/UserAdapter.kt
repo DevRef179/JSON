@@ -46,8 +46,10 @@ class UserAdapter (val context: Context, val items: ArrayList<UserModelClass>) :
         holder.tvGender.text = item.gender
         holder.tvWeight.text = item.weight.toString()
         holder.tvHeight.text = item.height.toString()
-        holder.tvMobileNumber.text = item.mobile
-        holder.tvOfficeNumber.text = item.office
+        //holder.tvMobileNumber.text = item.mobile
+       // holder.tvOfficeNumber.text = item.office
+        holder.tvMobileNumber.text = item.phone.mobile
+        holder.tvOfficeNumber.text = item.phone.office
     }
 
     /**
@@ -70,5 +72,6 @@ class UserAdapter (val context: Context, val items: ArrayList<UserModelClass>) :
         val tvHeight = view.findViewById<TextView>(R.id.tv_height)
         val tvMobileNumber = view.findViewById<TextView>(R.id.tv_mobile)
         val tvOfficeNumber = view.findViewById<TextView>(R.id.tv_office_number)
+
     }
 }
